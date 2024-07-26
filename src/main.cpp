@@ -1,10 +1,10 @@
-﻿#include "main.h"
+﻿#include "core/core.h"
 
-int main()
+int main(int argc, char** argv)
 {
 
-	std::cout << "Hello world!\n";
-	std::cin.get();
+	Core::Hello();
+
 
 	return 0;
 }
