@@ -1,0 +1,3 @@
+set(CMAKE_DIR "${CMAKE_SOURCE_DIR}/cmake")
+set(SRC_DIR "${CMAKE_SOURCE_DIR}/src")
+set(INCLUDE_DIR "${CMAKE_SOURCE_DIR}/include")

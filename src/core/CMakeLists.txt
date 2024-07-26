@@ -8,5 +8,5 @@ add_library(${PROJECT_NAME} STATIC
 
 target_include_directories(${PROJECT_NAME} 
 	PRIVATE 
-		"${CMAKE_SOURCE_DIR}/include/core/"
+		"${INCLUDE_DIR}/core/"
 )
