@@ -10,7 +10,7 @@ else()
 	FetchContent_Declare(
 		CURL 
 		GIT_REPOSITORY https://github.com/curl/curl
-		GIT_TAG MASTER
+		GIT_TAG master
 	)
 	FetchContent_MakeAvailable(CURL)
 endif()
