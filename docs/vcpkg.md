@@ -1,6 +1,6 @@
 
 
-#### First, install vcpkg
+#### Vcpkg installation
 ```
 git clone https://github.com/microsoft/vcpkg.git
 cd path/to/vcpkg
@@ -14,7 +14,6 @@ setx VCPKG_ROOT_DIRECTORY path/to/vcpkg (ensure you use '/' and not '\\' even on
 #### Install depdencies with vcpkg
 ```
 cd path/to/vcpkg
-vcpkg install wxwidgets
 vcpkg install curl
 vcpkg integrate install
 ```
