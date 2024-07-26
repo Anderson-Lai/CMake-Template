@@ -1,5 +1,11 @@
 ﻿cmake_minimum_required(VERSION 3.20)
 
+message("Setting vcpkg as toolchain file")
+if (DEFINED ENV{VCPKG_ROOT_DIRECTORY})
+    set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT_DIRECTORY}/scripts/buildsystems/vcpkg.cmake")
+else()
+    message("Environment varaible VCPKG_ROOT_DIRECTORY is not set. Downloading dependencies from source.")
+endif()
 
 # variables for common paths
 include("${CMAKE_SOURCE_DIR}/cmake/paths.cmake")

@@ -3,25 +3,20 @@
 # getting dependencies
 include(FetchContent)
 
-message(STATUS "Fetching dependencies")
-if (NOT DEFINED ENV{VCPKG_ROOT_DIRECTORY})
-    set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT_DIRECTORY}/scripts/buildsystems/vcpkg.cmake")
-
-    find_package(CURL REQUIRED)
+message("Fetching dependencies")
+if (DEFINED ENV{VCPKG_ROOT_DIRECTORY})
+	find_package(CURL REQUIRED)
 else()
-    message(STATUS 
-        "Environment varaible VCPKG_ROOT_DIRECTORY is not set. Downloading dependencies from source."
-    )
-
-    FetchContent_Declare(
-        CURL 
-        GIT_REPOSITORY https://github.com/curl/curl.git 
-        GIT_TAG master
-    )
-    FetchContent_MakeAvailable(CURL)
+	FetchContent_Declare(
+		CURL 
+		GIT_REPOSITORY https://github.com/curl/curl
+		GIT_TAG MASTER
+	)
+	FetchContent_MakeAvailable(CURL)
 endif()
 message("Done fetching and building dependencies")
 
+# library name
 project(core CXX)
 
 add_library(${PROJECT_NAME} STATIC 

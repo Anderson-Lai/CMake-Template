@@ -8,11 +8,12 @@ On Windows, install the MSVC C++ compiler if you have not already <br />
 On Linux, gcc/g++ should already be installed <br />
 Ensure your compiler supports C++ 20 <br />
 
-### If you would like to use vcpkg to fetch dependencies, refer [here](/docs/vcpkg.md)
-#### Otherwise, CMake's FetchContent will be used
+### Dependencies:
+If are using windows and would like to use vcpkg to fetch dependencies, refer [here](/docs/vcpkg.md) <br />
+Otherwise, CMake's FetchContent will be used <br />
 
-#### Build the project
-Run the following commands in command prompt / the terminal at the project's root directory:
+### Building the project
+Run the following commands at the project's root directory:
 ```
 cd scripts
 ./build.bat (on windows)
