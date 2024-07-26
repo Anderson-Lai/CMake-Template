@@ -1,9 +1,13 @@
-﻿cmake_minimum_required(VERSION 3.28)
+﻿cmake_minimum_required(VERSION 3.20)
 
-if (DEFINED ENV{VCPKG_ROOT_DIRECTORY})
-    set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT_DIRECTORY}/scripts/buildsystems/vcpkg.cmake")
-else()
-    message(FATAL_ERROR "Environment varaible VCPKG_ROOT_DIRECTORY is not set. Point it to the root directory of where vcpkg is installed.")
+set(VCPKG_REQUIRED OFF)
+
+if (${VCPKG_REQUIRED})
+    if (DEFINED ENV{VCPKG_ROOT_DIRECTORY})
+        set(CMAKE_TOOLCHAIN_FILE "$ENV{VCPKG_ROOT_DIRECTORY}/scripts/buildsystems/vcpkg.cmake")
+    else()
+        message(FATAL_ERROR "Environment varaible VCPKG_ROOT_DIRECTORY is not set. Point it to the root directory of where vcpkg is installed.")
+    endif()
 endif()
 
 project(add_project_name CXX)

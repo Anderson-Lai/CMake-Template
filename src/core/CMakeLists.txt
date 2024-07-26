@@ -1,12 +1,12 @@
 
 
-add_library(core STATIC 
+project(core CXX)
+
+add_library(${PROJECT_NAME} STATIC 
 	core.cpp 
 )
 
-set(LIB_NAME core)
-
-target_include_directories(${LIB_NAME} 
+target_include_directories(${PROJECT_NAME} 
 	PRIVATE 
 		"${CMAKE_SOURCE_DIR}/include/core/"
 )
