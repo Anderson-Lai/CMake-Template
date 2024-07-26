@@ -12,7 +12,7 @@ include("${CMAKE_SOURCE_DIR}/cmake/paths.cmake")
 
 project(add_project_name CXX)
 
-# compile with c++20
+# compile with c++ 20
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -28,5 +28,5 @@ target_include_directories(${PROJECT_NAME}
 # gather all subdirectories
 add_subdirectory("${SRC_DIR}/core")
 
-# link the subdirectories and dependencies
+# link the subdirectories and any dependencies
 target_link_libraries(${PROJECT_NAME} PRIVATE core)
